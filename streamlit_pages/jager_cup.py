@@ -51,7 +51,7 @@ def display_cup_matches_by_week(data):
             for idx, row in df_matches.iterrows():
                 with cols[week_idx % 2]:
                     with st.container(height=100):
-                        container_cols = st.columns([3, 1, 1])
+                        container_cols = st.columns([2, 1, 1])
                         with container_cols[0]:
                             st.markdown(
                                 f"<div style='margin-bottom: 0.2em; line-height: 2; font-size: 1em;'>"
