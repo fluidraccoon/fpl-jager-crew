@@ -44,7 +44,7 @@ def show_prizes_page():
                 return ordinal(pos)
         cup_league_text = "<br>".join([f"<b>{cup_label(row['position'])}:</b> £{row['amount']}" for _, row in cup_league.iterrows()])
         st.markdown(cup_league_text, unsafe_allow_html=True)
-        if not st.session_state.get("is_mobile", False):
+        if st.session_state.get("is_mobile", False):
             st.markdown("<hr>", unsafe_allow_html=True)
 
     # Weekly League Prizes
