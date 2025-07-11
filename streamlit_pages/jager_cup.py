@@ -58,11 +58,6 @@ def display_cup_matches_by_week(data):
                         if is_mobile:
                             container_cols = st.columns([1])  # Single column for mobile
                             st.markdown(
-                                "<style>div[data-testid='column'] { display: flex; flex-direction: column; }</style>",
-                                unsafe_allow_html=True
-                            )
-
-                            st.markdown(
                                 f"<div style='margin-bottom: 0.2em; line-height: 2; font-size: 1em;'>"
                                 f"<span style='position: absolute; left: 0%;'><b>{row['Player 1']}</b></span>"
                                 f"<span style='position: absolute; left: 50%;'>{row['Points 1']}</span>"
