@@ -58,7 +58,7 @@ def display_cup_matches_by_week(data):
                         if is_mobile:
                             container_cols = st.columns([1])  # Single column for mobile
                             st.markdown(
-                                f"<div style='margin-bottom: 0.2em; line-height: 1; font-size: 1em;'>"
+                                f"<div style='margin-bottom: 0.6em; line-height: 2; font-size: 1em;'>"
                                 f"<span style='position: absolute; left: 0%;'><b>{row['Player 1']}</b></span>"
                                 f"<span style='position: absolute; left: 50%;'>{row['Points 1']}</span>"
                                 f"<span style='position: absolute; left: 75%;'>{'✅' if row['Points 1'] > row['Points 2'] else ''}</span><br>"
