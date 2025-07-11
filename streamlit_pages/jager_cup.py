@@ -57,11 +57,10 @@ def display_cup_matches_by_week(data):
                     with st.container(height=100):
                         if is_mobile:
                             container_cols = st.columns([2, 1, 1])
-                            for col in container_cols:
-                                col.markdown(
-                                    "<style>div[data-testid='column'] { max-width: 150px; flex-wrap: nowrap; flex-grow: 1; }</style>",
-                                    unsafe_allow_html=True
-                                )
+                            st.markdown(
+                                "<style>div[data-testid='column'] { display: flex; flex-wrap: nowrap; overflow-x: auto; }</style>",
+                                unsafe_allow_html=True
+                            )
                         else:
                             container_cols = st.columns([2, 1, 1])  # Original layout for desktop
 
