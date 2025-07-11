@@ -116,10 +116,10 @@ def main():
         layout="wide",
         initial_sidebar_state="expanded",
     )
-    
+
     width = st_javascript("window.innerWidth")
     if width is not None:
-        st.session_state['is_mobile'] = width < 700
+        st.session_state["is_mobile"] = width < 700
 
     df_weekly_scores = load_weekly_scores()
 
