@@ -48,52 +48,51 @@ def display_cup_matches_by_week(data):
 
             cols = st.columns(3)
             week_idx = 0
+            # Detect mobile state
+            is_mobile = st.session_state.get("is_mobile", False)
+
+            # Adjust layout based on mobile state
             for idx, row in df_matches.iterrows():
                 with cols[week_idx % 2]:
                     with st.container(height=100):
-                        with st.container():
-                            container_cols = st.columns([2, 1, 1])
+                        if is_mobile:
+                            container_cols = st.columns([1, 1, 1])  # Equal width for mobile
+                        else:
+                            container_cols = st.columns([2, 1, 1])  # Original layout for desktop
+
+                        with container_cols[0]:
                             st.markdown(
-                                "<style>"
-                                "@media (max-width: 768px) {"
-                                "    .css-1kyxreq { display: flex; flex-wrap: nowrap; justify-content: space-between; }"
-                                "}"
-                                "</style>",
+                                f"<div style='margin-bottom: 0.2em; line-height: 2; font-size: 1em;'>"
+                                f"<b>{row['Player 1']}</b><br>"
+                                f"<hr style='margin:2px 0;'>"
+                                f"<b>{row['Player 2']}</b>"
+                                f"</div>",
                                 unsafe_allow_html=True
                             )
-                            with container_cols[0]:
-                                st.markdown(
-                                    f"<div style='margin-bottom: 0.2em; line-height: 2; font-size: 1em;'>"
-                                    f"<b>{row['Player 1']}</b><br>"
-                                    f"<hr style='margin:2px 0;'>"
-                                    f"<b>{row['Player 2']}</b>"
-                                    f"</div>",
-                                    unsafe_allow_html=True
-                                )
-                            with container_cols[1]:
-                                st.markdown(
-                                    f"<div style='margin-bottom: 0.2em; line-height: 2.3; font-size: 1em; text-align: center;'>"
-                                    f"{row['Points 1']}<br>"
-                                    f"{row['Points 2']}"
-                                    f"</div>",
-                                    unsafe_allow_html=True
-                                )
-                            with container_cols[2]:
-                                if row['Points 1'] > row['Points 2']:
-                                    winner = row['Player 1']
-                                elif row['Points 2'] > row['Points 1']:
-                                    winner = row['Player 2']
-                                else:
-                                    winner = None
+                        with container_cols[1]:
+                            st.markdown(
+                                f"<div style='margin-bottom: 0.2em; line-height: 2.3; font-size: 1em; text-align: center;'>"
+                                f"{row['Points 1']}<br>"
+                                f"{row['Points 2']}"
+                                f"</div>",
+                                unsafe_allow_html=True
+                            )
+                        with container_cols[2]:
+                            if row['Points 1'] > row['Points 2']:
+                                winner = row['Player 1']
+                            elif row['Points 2'] > row['Points 1']:
+                                winner = row['Player 2']
+                            else:
+                                winner = None
 
-                                image = "✅ " if stage != "Final" else "🏆 " 
-                                st.markdown(
-                                    f"<div style='margin-bottom: 0.2em; line-height: 2.3; font-size: 1em; text-align: center;'>"
-                                    f"{image if winner == row['Player 1'] else ''}<br>"
-                                    f"{image if winner == row['Player 2'] else ''}"
-                                    f"</div>",
-                                    unsafe_allow_html=True
-                                )
+                            image = "✅ " if stage != "Final" else "🏆 " 
+                            st.markdown(
+                                f"<div style='margin-bottom: 0.2em; line-height: 2.3; font-size: 1em; text-align: center;'>"
+                                f"{image if winner == row['Player 1'] else ''}<br>"
+                                f"{image if winner == row['Player 2'] else ''}"
+                                f"</div>",
+                                unsafe_allow_html=True
+                            )
                 week_idx += 1
 
             # Display byes at the bottom, split into two columns inside column 3
