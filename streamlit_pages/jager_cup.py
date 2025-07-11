@@ -64,9 +64,9 @@ def display_cup_matches_by_week(data):
 
                             st.markdown(
                                 f"<div style='margin-bottom: 0.2em; line-height: 2; font-size: 1em;'>"
-                                f"<span style='position: absolute; left: 0%;'><b>{row['Player 1']}</b></span><br>"
-                                f"<span style='position: absolute; left: 0%;'><b>{row['Player 2']}</b></span><br>"
+                                f"<span style='position: absolute; left: 0%;'><b>{row['Player 1']}</b></span>"
                                 f"<span style='position: absolute; left: 25%;'>{row['Points 1']}</span><br>"
+                                f"<span style='position: absolute; left: 0%;'><b>{row['Player 2']}</b></span><br>"
                                 f"<span style='position: absolute; left: 25%;'>{row['Points 2']}</span><br>"
                                 f"<span style='position: absolute; left: 50%;'>{'✅' if row['Points 1'] > row['Points 2'] else ''}</span><br>"
                                 f"<span style='position: absolute; left: 50%;'>{'✅' if row['Points 2'] > row['Points 1'] else ''}</span>"
