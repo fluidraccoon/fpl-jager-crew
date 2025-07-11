@@ -13,6 +13,7 @@ requests = "^2.32.4"
 numpy = "^2.3.0"
 streamlit = "^1.45.1"
 black = "^25.1.0"
+streamlit-javascript = "^0.1.5"
 
 [tool.poetry.requires-plugins]
 poetry-plugin-export = ">=1.8"

@@ -4,6 +4,7 @@ import pandas as pd
 import altair as alt
 import time
 import threading
+from streamlit_javascript import st_javascript
 from streamlit_pages.prizes import show_prizes_page
 from streamlit_pages.jager_cup import run_cup_page
 
@@ -115,6 +116,10 @@ def main():
         layout="wide",
         initial_sidebar_state="expanded",
     )
+    
+    width = st_javascript("window.innerWidth")
+    if width is not None:
+        st.session_state['is_mobile'] = width < 700
 
     df_weekly_scores = load_weekly_scores()
 
