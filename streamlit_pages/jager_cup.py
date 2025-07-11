@@ -58,13 +58,18 @@ def display_cup_matches_by_week(data):
                         if is_mobile:
                             container_cols = st.columns([1])  # Single column for mobile
                             st.markdown(
+                                "<style>div[data-testid='column'] { display: flex; flex-direction: column; }</style>",
+                                unsafe_allow_html=True
+                            )
+
+                            st.markdown(
                                 f"<div style='margin-bottom: 0.2em; line-height: 2; font-size: 1em;'>"
-                                f"<span style='position: absolute; left: 0%;'><b>{row['Player 1']}</b></span>"
-                                f"<span style='position: absolute; left: 50%;'>{row['Points 1']}</span>"
-                                f"<span style='position: absolute; left: 75%;'>{'✅' if row['Points 1'] > row['Points 2'] else ''}</span><br>"
-                                f"<span style='position: absolute; left: 0%;'><b>{row['Player 2']}</b></span>"
-                                f"<span style='position: absolute; left: 50%;'>{row['Points 2']}</span>"
-                                f"<span style='position: absolute; left: 75%;'>{'✅' if row['Points 2'] > row['Points 1'] else ''}</span>"
+                                f"<span style='position: relative; top: 0%;'><b>{row['Player 1']}</b></span><br>"
+                                f"<span style='position: relative; top: 10%;'><b>{row['Player 2']}</b></span><br>"
+                                f"<span style='position: relative; top: 20%;'>{row['Points 1']}</span><br>"
+                                f"<span style='position: relative; top: 30%;'>{row['Points 2']}</span><br>"
+                                f"<span style='position: relative; top: 40%;'>{'✅' if row['Points 1'] > row['Points 2'] else ''}</span><br>"
+                                f"<span style='position: relative; top: 50%;'>{'✅' if row['Points 2'] > row['Points 1'] else ''}</span>"
                                 f"</div>",
                                 unsafe_allow_html=True
                             )
