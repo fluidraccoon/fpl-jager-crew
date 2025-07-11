@@ -46,66 +46,59 @@ def display_cup_matches_by_week(data):
             df_matches = df_gw[~df_gw["Is Bye"]]
             df_byes = df_gw[df_gw["Is Bye"]]
 
-            # cols = st.columns(3)
-            cols = st.columns(1) if st.session_state.get('is_mobile', False) else st.columns(3)
+            cols = st.columns(3)
             week_idx = 0
             for idx, row in df_matches.iterrows():
-                with cols[0 if st.session_state.get('is_mobile', False) else (week_idx % 2)]:
+                with cols[week_idx % 2]:
                     with st.container(height=100):
-                        container_cols = st.columns([3, 1, 1])
-                        # Add custom CSS to force container_cols to stay side by side on mobile only
-                        st.markdown("""
-                            <style>
-                            @media (max-width: 600px) {
-                                .block-container .stColumns {
-                                    flex-wrap: nowrap !important;
-                                    overflow-x: auto;
-                                }
-                                .block-container .stColumn {
-                                    min-width: 120px !important;
-                                    max-width: 100vw;
-                                }
-                            }
-                            </style>
-                        """, unsafe_allow_html=True)
-                        with container_cols[0]:
+                        with st.container():
+                            container_cols = st.columns([2, 1, 1])
                             st.markdown(
-                                f"<div style='margin-bottom: 0.2em; line-height: 2; font-size: 1em;'>"
-                                f"<b>{row['Player 1']}</b><br>"
-                                f"<hr style='margin:2px 0;'>"
-                                f"<b>{row['Player 2']}</b>"
-                                f"</div>",
+                                "<style>"
+                                "@media (max-width: 768px) {"
+                                "    .css-1kyxreq { display: flex; flex-wrap: nowrap; justify-content: space-between; }"
+                                "}"
+                                "</style>",
                                 unsafe_allow_html=True
                             )
-                        with container_cols[1]:
-                            st.markdown(
-                                f"<div style='margin-bottom: 0.2em; line-height: 2.3; font-size: 1em; text-align: center;'>"
-                                f"{row['Points 1']}<br>"
-                                f"{row['Points 2']}"
-                                f"</div>",
-                                unsafe_allow_html=True
-                            )
-                        with container_cols[2]:
-                            if row["Points 1"] > row["Points 2"]:
-                                winner = row["Player 1"]
-                            elif row["Points 2"] > row["Points 1"]:
-                                winner = row["Player 2"]
-                            else:
-                                winner = None
+                            with container_cols[0]:
+                                st.markdown(
+                                    f"<div style='margin-bottom: 0.2em; line-height: 2; font-size: 1em;'>"
+                                    f"<b>{row['Player 1']}</b><br>"
+                                    f"<hr style='margin:2px 0;'>"
+                                    f"<b>{row['Player 2']}</b>"
+                                    f"</div>",
+                                    unsafe_allow_html=True
+                                )
+                            with container_cols[1]:
+                                st.markdown(
+                                    f"<div style='margin-bottom: 0.2em; line-height: 2.3; font-size: 1em; text-align: center;'>"
+                                    f"{row['Points 1']}<br>"
+                                    f"{row['Points 2']}"
+                                    f"</div>",
+                                    unsafe_allow_html=True
+                                )
+                            with container_cols[2]:
+                                if row['Points 1'] > row['Points 2']:
+                                    winner = row['Player 1']
+                                elif row['Points 2'] > row['Points 1']:
+                                    winner = row['Player 2']
+                                else:
+                                    winner = None
 
-                            image = "✅ " if stage != "Final" else "🏆 " 
-                            st.markdown(
-                                f"<div style='margin-bottom: 0.2em; line-height: 2.3; font-size: 1em; text-align: center;'>"
-                                f"{image if winner == row['Player 1'] else ''}<br>"
-                                f"{image if winner == row['Player 2'] else ''}"
-                                f"</div>",
-                                unsafe_allow_html=True
-                            )
+                                image = "✅ " if stage != "Final" else "🏆 " 
+                                st.markdown(
+                                    f"<div style='margin-bottom: 0.2em; line-height: 2.3; font-size: 1em; text-align: center;'>"
+                                    f"{image if winner == row['Player 1'] else ''}<br>"
+                                    f"{image if winner == row['Player 2'] else ''}"
+                                    f"</div>",
+                                    unsafe_allow_html=True
+                                )
                 week_idx += 1
 
             # Display byes at the bottom, split into two columns inside column 3
             if not df_byes.empty:
-                with cols[0 if st.session_state.get('is_mobile', False) else 2]:
+                with cols[2]:
                     st.subheader("Byes")
                     bye_managers = df_byes.sort_values("Player 1")["Player 1"].tolist()
                     half = (len(bye_managers) + 1) // 2
