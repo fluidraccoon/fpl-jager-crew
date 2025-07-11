@@ -56,7 +56,7 @@ def display_cup_matches_by_week(data):
                 with cols[week_idx % 2]:
                     with st.container(height=100):
                         if is_mobile:
-                            container_cols = st.columns([2, 1, 1, 2])
+                            container_cols = st.columns([2, 1, 1])
                             for col in container_cols:
                                 col.markdown(
                                     "<style>div[data-testid='column'] { max-width: 150px; flex-wrap: nowrap; flex-grow: 1; }</style>",
