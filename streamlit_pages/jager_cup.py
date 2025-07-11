@@ -50,7 +50,7 @@ def display_cup_matches_by_week(data):
             cols = st.columns(1) if st.session_state.get('is_mobile', False) else st.columns(3)
             week_idx = 0
             for idx, row in df_matches.iterrows():
-                with cols[week_idx % (1 if st.session_state.get('is_mobile', False) else 2)]:
+                with cols[week_idx % (0 if st.session_state.get('is_mobile', False) else 2)]:
                     with st.container(height=100):
                         container_cols = st.columns([3, 1, 1])
                         # Add custom CSS to force container_cols to stay side by side on mobile only
@@ -105,7 +105,7 @@ def display_cup_matches_by_week(data):
 
             # Display byes at the bottom, split into two columns inside column 3
             if not df_byes.empty:
-                with cols[(0 if not st.session_state.get('is_mobile', False) else 2)]:
+                with cols[0 if st.session_state.get('is_mobile', False) else 2]:
                     st.subheader("Byes")
                     bye_managers = df_byes.sort_values("Player 1")["Player 1"].tolist()
                     half = (len(bye_managers) + 1) // 2
