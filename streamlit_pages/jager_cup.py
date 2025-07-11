@@ -105,7 +105,7 @@ def display_cup_matches_by_week(data):
 
             # Display byes at the bottom, split into two columns inside column 3
             if not df_byes.empty:
-                with cols[2]:
+                with cols[1 if not st.session_state.get('is_mobile', False) else 2]:
                     st.subheader("Byes")
                     bye_managers = df_byes.sort_values("Player 1")["Player 1"].tolist()
                     half = (len(bye_managers) + 1) // 2
