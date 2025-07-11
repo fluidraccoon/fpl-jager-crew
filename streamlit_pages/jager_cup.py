@@ -50,7 +50,7 @@ def display_cup_matches_by_week(data):
             cols = st.columns(1) if st.session_state.get('is_mobile', False) else st.columns(3)
             week_idx = 0
             for idx, row in df_matches.iterrows():
-                with cols[week_idx % 2]:
+                with cols[week_idx % (1 if st.session_state.get('is_mobile', False) else 2)]:
                     with st.container(height=100):
                         container_cols = st.columns([3, 1, 1])
                         # Add custom CSS to force container_cols to stay side by side on mobile only
