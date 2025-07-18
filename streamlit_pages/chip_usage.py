@@ -130,6 +130,7 @@ def show_chip_usage_page(selected_user):
             hide_index=True,
             column_config=config_columns,
             use_container_width=False,
+            height=(len(chip_summary) + 1) * 35 + 3,  # Calculate height to show all rows
         )
     
     with tab2:
