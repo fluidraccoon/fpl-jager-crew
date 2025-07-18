@@ -1,8 +1,8 @@
-name: Run initial_setup.py every hour
+name: Run initial_setup.py every 4 hours
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 */4 * * *'
   workflow_dispatch:
 
 jobs:
