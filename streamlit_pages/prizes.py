@@ -13,7 +13,7 @@ def ordinal(n):
 
 def show_prizes_page():
     """Display the prizes page content side by side"""
-    st.title("Prize Fund 🏆")
+    st.title("Prize Fund 💵")
     df = pd.read_csv("prize_fund.csv")
     col1, col2, col3 = st.columns(3)
 

@@ -127,13 +127,14 @@ def main():
     selected_user = render_sidebar(df_weekly_scores)
 
     pages = [
-        st.Page(show_prizes_page, title="Prize Fund", icon="🏅"),
+        st.Page(show_prizes_page, title="Prize Fund", icon="💵"),
         st.Page(
             lambda: show_weekly_winner_page(df_weekly_scores, selected_user),
             title="Weekly Winner",
-            icon="🏆",
+            icon="📅",
+            url_path="/weekly-winner"
         ),
-        st.Page(run_cup_page, title="Jager Cup (from GW34)", icon="⚽"),
+        st.Page(run_cup_page, title="Jager Cup (from GW34)", icon="🏆"),
     ]
 
     pg = st.navigation(pages)
