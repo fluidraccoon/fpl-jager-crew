@@ -51,6 +51,11 @@ def get_league_weekly_data(league_id):
 
 
 # Example usage
-df = get_league_weekly_data(LEAGUE_ID)
-df["player_name"] = df["player_name"].str.title()
-df.to_csv(f"data/weekly_scores.csv", index=False)
+try:
+    df = get_league_weekly_data(LEAGUE_ID)
+    df["player_name"] = df["player_name"].str.title()
+    df.to_csv(f"data/weekly_scores.csv", index=False)
+    print("Successfully updated weekly_scores.csv")
+except Exception as e:
+    print(f"Error occurred: {e}")
+    print("Script terminated early due to error")
