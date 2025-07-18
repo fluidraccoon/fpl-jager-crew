@@ -97,7 +97,7 @@ def show_weekly_winner_page(df_weekly_scores, selected_user):
         config_columns = {
             "player_name": st.column_config.TextColumn("Manager", width="medium"),
             "prize": st.column_config.NumberColumn(
-                "Winnings", format=f"£ %.2f", width="small"
+                "Winnings", format=f"£ %.2f", width=80
             ),
         }
 
