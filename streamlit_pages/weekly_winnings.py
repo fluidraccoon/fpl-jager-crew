@@ -49,9 +49,9 @@ def show_weekly_winner_page(df_weekly_scores, selected_user):
         df_weekly_prizes = df_weekly_prizes.sort_values(by="prize", ascending=False)
 
         config_columns = {
-            "player_name": st.column_config.TextColumn("Manager", width="medium"),
+            "player_name": st.column_config.TextColumn("Manager", width=150),
             "prize": st.column_config.NumberColumn(
-                "Winnings", format=f"£ %.2f", width=90
+                "Winnings", format=f"£ %.2f", width=80
             ),
         }
 

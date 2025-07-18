@@ -8,6 +8,7 @@ from streamlit_javascript import st_javascript
 from streamlit_pages.prizes import show_prizes_page
 from streamlit_pages.jager_cup import run_cup_page
 from streamlit_pages.weekly_winnings import show_weekly_winner_page
+from streamlit_pages.chip_usage import show_chip_usage_page
 
 
 def keep_alive():
@@ -73,6 +74,12 @@ def main():
             title="Weekly Winner",
             icon="📅",
             url_path="/weekly-winner"
+        ),
+        st.Page(
+            lambda: show_chip_usage_page(selected_user),
+            title="Chip Usage",
+            icon="🎯",
+            url_path="/chip-usage"
         ),
         st.Page(run_cup_page, title="Jager Cup (from GW34)", icon="🏆"),
     ]
