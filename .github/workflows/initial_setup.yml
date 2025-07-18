@@ -1,8 +1,8 @@
-name: Run initial_setup.py every 10 minutes
+name: Run initial_setup.py every hour
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -19,3 +19,16 @@ jobs:
           pip install -r requirements.txt
       - name: Run initial_setup.py
         run: python initial_setup.py
+      - name: Configure git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+      - name: Commit and push changes
+        run: |
+          git add .
+          if git diff --staged --quiet; then
+            git commit --allow-empty -m "Auto-run initial_setup.py (no changes) [$(date)]"
+          else
+            git commit -m "Auto-update data from initial_setup.py [$(date)]"
+          fi
+          git push
