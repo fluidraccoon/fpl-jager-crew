@@ -5,6 +5,9 @@ on:
     - cron: '0 */4 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   run-initial-setup:
     runs-on: ubuntu-latest
@@ -19,16 +22,16 @@ jobs:
           pip install -r requirements.txt
       - name: Run initial_setup.py
         run: python initial_setup.py
-      - name: Configure git
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           if git diff --staged --quiet; then
             git commit --allow-empty -m "Auto-run initial_setup.py (no changes) [$(date)]"
           else
             git commit -m "Auto-update data from initial_setup.py [$(date)]"
           fi
-          git push
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/fluidraccoon/fpl-jager-crew.git HEAD:main
