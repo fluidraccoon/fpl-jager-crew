@@ -78,7 +78,7 @@ def main():
         st.Page(
             lambda: show_chip_usage_page(selected_user),
             title="Chip Usage",
-            icon="🎯",
+            icon="🍟",
             url_path="/chip-usage"
         ),
         st.Page(run_cup_page, title="Jager Cup (from GW34)", icon="🏆"),

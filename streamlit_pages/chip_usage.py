@@ -41,10 +41,10 @@ def show_chip_usage_page(selected_user):
     
     # Create chip display mapping
     chip_mapping = {
-        'wildcard': '🃏 Wildcard',
-        'freehit': '🎯 Free Hit', 
         'bboost': '🚀 Bench Boost',
-        '3xc': '3️⃣ Triple Captain',
+        'freehit': '🎯 Free Hit', 
+        '3xc': '👑 Triple Captain',
+        'wildcard': '🔄 Wildcard',
     }
     
     # Map chip names for display
@@ -66,15 +66,18 @@ def show_chip_usage_page(selected_user):
     with tab1:
         st.subheader("Chip Usage Summary by Manager")
         
+        # Add legend for chip emojis
+        st.markdown("""
+        **Legend:**  
+        🚀 Bench Boost | 🎯 Free Hit | 👑 Triple Captain | 🔄 Wildcard
+        """)
+        st.markdown("---")
+        
         # Count chips used by each player - pivot to get chips as columns
-        chip_summary = df_chips.groupby(['player_name', 'chip_display']).size().unstack(fill_value=0)
+        chip_counts = df_chips.groupby(['player_name', 'chip_display']).size().unstack(fill_value=0)
         
-        # Add total chips column for sorting only
-        chip_cols = list(chip_summary.columns)
-        chip_summary['Total Chips'] = chip_summary[chip_cols].sum(axis=1)
-        
-        # Reset index to make manager names a regular column with proper header
-        chip_summary = chip_summary.reset_index()
+        # Create a summary with split chips columns based on gameweek
+        chip_summary = chip_counts.reset_index()
         chip_summary = chip_summary.rename(columns={'player_name': 'Manager'})
         
         # Add total points column
@@ -86,37 +89,62 @@ def show_chip_usage_page(selected_user):
         else:
             chip_summary['total_points'] = 0
         
+        # Create function to format chips for a specific gameweek range
+        def format_chips_for_period(manager, gw_start, gw_end):
+            # Filter chips for this manager and gameweek range
+            manager_chips = df_chips[
+                (df_chips['player_name'] == manager) & 
+                (df_chips['event'] >= gw_start) & 
+                (df_chips['event'] <= gw_end)
+            ]
+            
+            if manager_chips.empty:
+                return ''
+            
+            # Count chips by type for this period
+            chip_counts_period = manager_chips.groupby('chip_display').size()
+            chips_used = []
+            
+            # Define the desired order of chips
+            chip_order = [
+                ('🚀 Bench Boost', '🚀'),
+                ('🎯 Free Hit', '🎯'),
+                ('👑 Triple Captain', '👑'),
+                ('🔄 Wildcard', '🔄')
+            ]
+            
+            # Process chips in the specified order
+            for chip_name, emoji in chip_order:
+                if chip_name in chip_counts_period:
+                    count = chip_counts_period[chip_name]
+                    if count > 0:
+                        chips_used.append(emoji * count)
+            
+            return ' '.join(chips_used) if chips_used else ''
+        
+        # Create chips columns for each period
+        chip_summary['Chips GW 1-19'] = chip_summary['Manager'].apply(
+            lambda x: format_chips_for_period(x, 1, 19)
+        )
+        chip_summary['Chips GW 20-38'] = chip_summary['Manager'].apply(
+            lambda x: format_chips_for_period(x, 20, 38)
+        )
+        
         # Sort by total points (descending) and add rank
         chip_summary = chip_summary.sort_values('total_points', ascending=False)
         chip_summary['Rank'] = range(1, len(chip_summary) + 1)
         
-        # Drop the temporary Total Chips column
-        chip_summary = chip_summary.drop('Total Chips', axis=1)
-        
-        # Reorder columns to put Rank first, then Manager, then Total Points
-        chip_cols = [col for col in chip_summary.columns if col not in ['Rank', 'Manager', 'total_points']]
-        chip_summary = chip_summary[['Rank', 'Manager', 'total_points'] + chip_cols]
-        
-        # Convert numbers to green tick emojis (exclude Rank, Manager and total_points columns)
-        for col in chip_summary.columns:
-            if col not in ['Rank', 'Manager', 'total_points']:
-                def format_ticks(x):
-                    if x == 0:
-                        return ''
-                    else:
-                        return '✅' * x
-                
-                chip_summary[col] = chip_summary[col].apply(format_ticks)
+        # Keep only the columns we want to display
+        chip_summary = chip_summary[['Rank', 'Manager', 'total_points', 'Chips GW 1-19', 'Chips GW 20-38']]
         
         # Create column configuration
         config_columns = {
             'Rank': st.column_config.NumberColumn("Rank", width=60),
             'Manager': st.column_config.TextColumn("Manager", width=150),
-            'total_points': st.column_config.NumberColumn("Total Points", width=100)
+            'total_points': st.column_config.NumberColumn("Total Points", width=100),
+            'Chips GW 1-19': st.column_config.TextColumn("GW 1-19", width=120),
+            'Chips GW 20-38': st.column_config.TextColumn("GW 20-38", width=120)
         }
-        for col in chip_summary.columns:
-            if col not in ['Rank', 'Manager', 'total_points']:
-                config_columns[col] = st.column_config.TextColumn(col, width=120)
         
         # Create styling function for summary
         def highlight_summary_row(row):
