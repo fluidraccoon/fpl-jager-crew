@@ -73,13 +73,13 @@ def main():
             lambda: show_weekly_winner_page(df_weekly_scores, selected_user),
             title="Weekly Winner",
             icon="📅",
-            url_path="/weekly-winner"
+            url_path="/weekly-winner",
         ),
         st.Page(
             lambda: show_chip_usage_page(selected_user),
             title="Chip Usage",
             icon="🍟",
-            url_path="/chip-usage"
+            url_path="/chip-usage",
         ),
         st.Page(run_cup_page, title="Jager Cup (from GW34)", icon="🏆"),
     ]
