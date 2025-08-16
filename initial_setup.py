@@ -4,6 +4,7 @@ import pandas as pd
 BASE_URL = "https://fantasy.premierleague.com/api"
 LEAGUE_ID = 43344  # Replace with actual league ID
 JAGER_CUP_LEAGUE_ID = 2636085  # Jager Cup H2H league ID
+# use the following league to get code in 32/33 https://fantasy.premierleague.com/api/leagues-classic/43344/standings/
 
 
 # Function to get current gameweek information
