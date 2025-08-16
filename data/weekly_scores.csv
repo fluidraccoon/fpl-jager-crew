@@ -1,13 +1,4 @@
 event,points,total_points,rank,rank_sort,overall_rank,percentile_rank,bank,value,event_transfers,event_transfers_cost,points_on_bench,player_name,team_name,entry_id
-<<<<<<< Updated upstream
-1,37,37,22480,26917,22480,1,0,1000,0,0,0,Siyanda Isaacs,Zaf never wins,7339747
-1,19,19,1472960,1868872,1472960,20,0,1000,0,0,0,Hans Musangu,Nicolo Baleba,4524344
-1,16,16,3385548,3401988,3385548,40,5,1000,0,0,0,Wade Jacobs,WhyAyewGae,89651
-1,16,16,3385548,3903684,3385548,40,0,1000,0,0,0,Chad Hag,Change Name,4186369
-1,16,16,3385548,4201897,3385548,40,0,1000,0,0,0,Logan Kittens,Beef Cherki,7091534
-1,16,16,3385548,4357583,3385548,40,0,1000,0,0,0,Giovani Gaffoor,Palmer's Punishers,8698612
-1,16,16,3385548,4379480,3385548,40,0,1000,0,0,0,Faisal Tareq,Automatic a-kanji 尻,8936355
-=======
 1,27,27,467981,486443,467981,5,5,1000,0,0,0,Prish Roy,Jota#20,1108722
 1,24,24,760459,761220,760459,10,0,1000,0,0,0,Josh Thomson,Kinder Mbeumo,49933
 1,23,23,874551,876512,874551,10,0,1000,0,0,0,Shivaan Popat,Diogone,41782
@@ -30,4 +21,3 @@ event,points,total_points,rank,rank_sort,overall_rank,percentile_rank,bank,value
 1,7,7,6518146,6539123,6518146,70,5,1000,0,0,0,Ravi Kotecha,Noni-your Business!,1001603
 1,7,7,6518146,6566865,6518146,70,0,1000,0,0,0,Cedric Mendes,Falcons,2603978
 1,1,1,8521541,8584159,8521541,90,0,1000,0,0,0,Simon Brawn,Hoping for £10,2286181
->>>>>>> Stashed changes
