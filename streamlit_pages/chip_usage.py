@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import altair as alt
 
 
 def load_chip_usage():
@@ -214,15 +215,18 @@ def show_chip_usage_page(selected_user):
                 .reset_index(name="count")
             )
 
-            # Create a chart showing chip usage over time
-            import altair as alt
+            # Ensure count is integer type and convert to string for labels
+            timeline_data['count'] = timeline_data['count'].astype(int)
+            timeline_data['count_str'] = timeline_data['count'].astype(str)
 
             chart = (
                 alt.Chart(timeline_data)
                 .mark_bar()
                 .encode(
-                    x=alt.X("event:O", title="Gameweek"),
-                    y=alt.Y("count:Q", title="Number of Chips Used"),
+                    x=alt.X("event:O", title="Gameweek", axis=alt.Axis(labelAngle=0)),
+                    y=alt.Y("count:Q", 
+                        title="Number of Chips Used",
+                        axis=alt.Axis(labelExpr="datum.value == floor(datum.value) ? format(datum.value, '.0f') : ''")),
                     color=alt.Color("chip_display:N", title="Chip Type"),
                     tooltip=[
                         alt.Tooltip("event:O", title="Gameweek"),
