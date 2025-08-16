@@ -11,7 +11,7 @@ python = "^3.11"
 pandas = "^2.3.0"
 requests = "^2.32.4"
 numpy = "^2.3.0"
-streamlit = "^1.45.1"
+streamlit = "^1.48.1"
 black = "^25.1.0"
 streamlit-javascript = "^0.1.5"
 

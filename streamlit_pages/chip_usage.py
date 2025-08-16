@@ -37,24 +37,28 @@ def show_chip_usage_page(selected_user):
     df_chips = load_chip_usage()
     df_weekly_scores = load_weekly_scores()
 
-    if df_chips.empty:
-        st.warning("No chip usage data available.")
+    if df_weekly_scores.empty:
+        st.error("Weekly scores data not found. Please run initial_setup.py first.")
         return
 
-    # Create chip display mapping
-    chip_mapping = {
-        "bboost": "🚀 Bench Boost",
-        "freehit": "🎯 Free Hit",
-        "3xc": "👑 Triple Captain",
-        "wildcard": "🔄 Wildcard",
-    }
+    # If no chip data exists, we'll still show all managers with empty chip usage
+    if df_chips.empty:
+        st.info("No chip usage data available yet. Showing all managers with no chips used.")
+    else:
+        # Create chip display mapping
+        chip_mapping = {
+            "bboost": "🚀 Bench Boost",
+            "freehit": "🎯 Free Hit",
+            "3xc": "👑 Triple Captain",
+            "wildcard": "🔄 Wildcard",
+        }
 
-    # Map chip names for display
-    df_chips["chip_display"] = df_chips["chip"].map(chip_mapping)
-    df_chips["chip_display"] = df_chips["chip_display"].fillna(df_chips["chip"])
+        # Map chip names for display
+        df_chips["chip_display"] = df_chips["chip"].map(chip_mapping)
+        df_chips["chip_display"] = df_chips["chip_display"].fillna(df_chips["chip"])
 
-    # Filter out "manager" chip as it's not a real FPL chip
-    df_chips = df_chips[df_chips["chip"] != "manager"]
+        # Filter out "manager" chip as it's not a real FPL chip
+        df_chips = df_chips[df_chips["chip"] != "manager"]
 
     # Styling function
     def highlight_row(row):
@@ -77,15 +81,31 @@ def show_chip_usage_page(selected_user):
         )
         st.markdown("---")
 
-        # Count chips used by each player - pivot to get chips as columns
-        chip_counts = (
-            df_chips.groupby(["player_name", "chip_display"])
-            .size()
-            .unstack(fill_value=0)
-        )
+        # Get all managers from weekly scores data
+        all_managers = df_weekly_scores["player_name"].unique() if not df_weekly_scores.empty else []
+        
+        # If we have chip data, count chips used by each player
+        if not df_chips.empty:
+            chip_counts = (
+                df_chips.groupby(["player_name", "chip_display"])
+                .size()
+                .unstack(fill_value=0)
+            )
+            chip_summary = chip_counts.reset_index()
+        else:
+            # If no chip data, create empty DataFrame with all managers
+            chip_summary = pd.DataFrame({"player_name": all_managers})
+        
+        # Ensure all managers are included, even if they haven't used chips
+        all_managers_df = pd.DataFrame({"player_name": all_managers})
+        chip_summary = all_managers_df.merge(chip_summary, on="player_name", how="left")
+        
+        # Fill NaN values with 0 for chip columns
+        chip_columns = [col for col in chip_summary.columns if col != "player_name"]
+        for col in chip_columns:
+            if col in chip_summary.columns:
+                chip_summary[col] = chip_summary[col].fillna(0)
 
-        # Create a summary with split chips columns based on gameweek
-        chip_summary = chip_counts.reset_index()
         chip_summary = chip_summary.rename(columns={"player_name": "Manager"})
 
         # Add total points column
@@ -105,6 +125,10 @@ def show_chip_usage_page(selected_user):
 
         # Create function to format chips for a specific gameweek range
         def format_chips_for_period(manager, gw_start, gw_end):
+            # Return empty string if no chip data available
+            if df_chips.empty:
+                return ""
+                
             # Filter chips for this manager and gameweek range
             manager_chips = df_chips[
                 (df_chips["player_name"] == manager)
@@ -210,3 +234,5 @@ def show_chip_usage_page(selected_user):
             )
 
             st.altair_chart(chart, use_container_width=True)
+        else:
+            st.info("No chip usage data available yet. Timeline will appear once managers start using chips.")

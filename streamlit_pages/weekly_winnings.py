@@ -1,14 +1,54 @@
 import streamlit as st
 import pandas as pd
+import os
+
+
+def get_finished_gameweeks():
+    """Get list of finished gameweeks from the gameweek info CSV."""
+    try:
+        if os.path.exists("data/gameweek_info.csv"):
+            gw_info = pd.read_csv("data/gameweek_info.csv")
+            if not gw_info.empty and "finished_events" in gw_info.columns:
+                finished_str = gw_info["finished_events"].iloc[0]
+                if pd.notna(finished_str) and finished_str.strip():
+                    return [int(x) for x in finished_str.split(",")]
+                else:
+                    # Empty string means no finished gameweeks yet - this is valid
+                    return []
+        # If file doesn't exist, return None to indicate we couldn't determine status
+        return None
+    except Exception as e:
+        st.warning(f"Could not load gameweek info: {e}")
+        return None
 
 
 def show_weekly_winner_page(df_weekly_scores, selected_user):
     """Display the weekly winner page content"""
     st.title("Weekly Winner")
 
-    df_weekly_winner = df_weekly_scores[
-        df_weekly_scores["points"]
-        == df_weekly_scores.groupby("event")["points"].transform("max")
+    # Get list of finished gameweeks
+    finished_gameweeks = get_finished_gameweeks()
+    
+    # Handle different cases
+    if finished_gameweeks is None:
+        # Could not determine gameweek status
+        st.warning("Could not determine which gameweeks are finished. Showing all data.")
+        df_completed = df_weekly_scores
+    elif len(finished_gameweeks) == 0:
+        # No gameweeks are finished yet
+        st.info("No completed gameweeks yet. Weekly winners will appear once gameweeks are finished.")
+        return
+    else:
+        # Some gameweeks are finished
+        st.info(f"Showing winners for completed gameweeks: {', '.join(map(str, sorted(finished_gameweeks)))}")
+        df_completed = df_weekly_scores[df_weekly_scores["event"].isin(finished_gameweeks)]
+        if df_completed.empty:
+            st.info("No data available for completed gameweeks.")
+            return
+
+    df_weekly_winner = df_completed[
+        df_completed["points"]
+        == df_completed.groupby("event")["points"].transform("max")
     ]
     df_weekly_winner = df_weekly_winner.sort_values(by="event")[
         ["event", "player_name", "points"]

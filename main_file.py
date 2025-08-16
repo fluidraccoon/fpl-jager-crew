@@ -84,7 +84,7 @@ def main():
         st.Page(run_cup_page, title="Jager Cup (from GW34)", icon="🏆"),
     ]
 
-    pg = st.navigation(pages)
+    pg = st.navigation(pages, position="top")
 
     pg.run()
 

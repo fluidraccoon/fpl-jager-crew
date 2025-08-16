@@ -1,4 +1,5 @@
 event,points,total_points,rank,rank_sort,overall_rank,percentile_rank,bank,value,event_transfers,event_transfers_cost,points_on_bench,player_name,team_name,entry_id
+<<<<<<< Updated upstream
 1,37,37,22480,26917,22480,1,0,1000,0,0,0,Siyanda Isaacs,Zaf never wins,7339747
 1,19,19,1472960,1868872,1472960,20,0,1000,0,0,0,Hans Musangu,Nicolo Baleba,4524344
 1,16,16,3385548,3401988,3385548,40,5,1000,0,0,0,Wade Jacobs,WhyAyewGae,89651
@@ -6,3 +7,27 @@ event,points,total_points,rank,rank_sort,overall_rank,percentile_rank,bank,value
 1,16,16,3385548,4201897,3385548,40,0,1000,0,0,0,Logan Kittens,Beef Cherki,7091534
 1,16,16,3385548,4357583,3385548,40,0,1000,0,0,0,Giovani Gaffoor,Palmer's Punishers,8698612
 1,16,16,3385548,4379480,3385548,40,0,1000,0,0,0,Faisal Tareq,Automatic a-kanji 尻,8936355
+=======
+1,27,27,467981,486443,467981,5,5,1000,0,0,0,Prish Roy,Jota#20,1108722
+1,24,24,760459,761220,760459,10,0,1000,0,0,0,Josh Thomson,Kinder Mbeumo,49933
+1,23,23,874551,876512,874551,10,0,1000,0,0,0,Shivaan Popat,Diogone,41782
+1,23,23,874551,876527,874551,10,5,1000,0,0,0,Akshay Loomba,Ekitike Taka,42133
+1,23,23,874551,994072,874551,10,10,1000,0,0,0,Mihir Patel,M-Unit,7126282
+1,21,21,1074163,1104125,1074163,15,0,1000,0,0,4,Jaymesh Patel,Bruno Dos Tres,1022916
+1,18,18,2220645,2253516,2220645,25,5,1000,0,0,0,Samit R Patel,I'm a Baleba,237392
+1,18,18,2220645,2405589,2220645,25,0,1000,0,0,0,Bharesh Patel,Boz Mania,2026984
+1,18,18,2220645,2564293,2220645,25,5,1000,0,0,0,Amit Shah,Peaky Reijnders,4514606
+1,18,18,2220645,2596462,2220645,25,0,1000,0,0,0,Deepak Singh,EKiTikka MoSalah,5035992
+1,18,18,2220645,2714643,2220645,25,5,1000,0,0,0,Amit Kerai,Net spend FC,7209255
+1,17,17,2836610,3181625,2836610,30,0,1000,0,0,0,Jameel Shah,AFC Jazzle,5712833
+1,16,16,3385548,3393602,3385548,40,0,1000,0,0,0,Mitesh Shah,Wirtz Nightmare,39860
+1,16,16,3385548,3402965,3385548,40,0,1000,0,0,0,Dan Coulton,Coult-on the Break,95435
+1,16,16,3385548,3423873,3385548,40,0,1000,0,0,0,Rahul Mahida,The Usual Suspects,234378
+1,16,16,3385548,3552144,3385548,40,0,1000,0,0,0,Fabian Carvalho,KayFabe,1206351
+1,16,16,3385548,3552883,3385548,40,15,1000,0,0,0,Yatin Patel,DaGreat1s,1212669
+1,16,16,3385548,3913022,3385548,40,5,1000,0,0,0,Tom Sharp,sharp shooters,4267263
+1,15,15,4428129,4451138,4428129,50,0,1000,0,0,0,Ravi Patel,Mid Table Madmen,2189178
+1,7,7,6518146,6539123,6518146,70,5,1000,0,0,0,Ravi Kotecha,Noni-your Business!,1001603
+1,7,7,6518146,6566865,6518146,70,0,1000,0,0,0,Cedric Mendes,Falcons,2603978
+1,1,1,8521541,8584159,8521541,90,0,1000,0,0,0,Simon Brawn,Hoping for £10,2286181
+>>>>>>> Stashed changes

@@ -1,61 +1,57 @@
 import streamlit as st
 import pandas as pd
-import requests
+import os
 
 
 def run_cup_page():
     st.title("Jager Cup 🏆")
 
-    url = "https://fantasy.premierleague.com/api/leagues-h2h-matches/league/2636085/?page=1"
-    response = requests.get(url)
-    if response.status_code == 200:
-        data = response.json()
-        display_cup_matches_by_week(data)
+    # Try to load data from CSV file
+    csv_path = "data/jager_cup_matches.csv"
+    if os.path.exists(csv_path):
+        try:
+            df = pd.read_csv(csv_path)
+            display_cup_matches_by_week(df)
+        except Exception as e:
+            st.error(f"Error loading Jager Cup data: {e}")
     else:
-        st.error(
-            f"Failed to fetch data from FPL API. Status code: {response.status_code}"
-        )
+        st.warning("Jager Cup matches will begin in GW34.")
 
 
-def display_cup_matches_by_week(data):
-    # Parse the results into a DataFrame
-    matches = []
-    for match in data["results"]:
-        matches.append(
-            {
-                "Week": match["event"],
-                "Stage": match["knockout_name"],
-                "Player 1": (
-                    match["entry_1_player_name"].title()
-                    if match["entry_1_player_name"]
-                    else ""
-                ),
-                "Team 1": match["entry_1_name"],
-                "Points 1": match["entry_1_points"],
-                "Player 2": (
-                    match["entry_2_player_name"].title()
-                    if match["entry_2_player_name"]
-                    else ""
-                ),
-                "Team 2": match["entry_2_name"],
-                "Points 2": match["entry_2_points"],
-                "Winner": match["winner"],
-                "Is Bye": match["is_bye"],
-            }
-        )
-    df = pd.DataFrame(matches)
+def display_cup_matches_by_week(df):
     if df.empty:
         st.warning("Jager Cup matches will begin in GW34.")
         return
 
+    # Convert DataFrame to match the expected format for display
+    matches = []
+    for _, row in df.iterrows():
+        matches.append({
+            "Week": row["event"],
+            "Stage": row["stage"],
+            "Player 1": row["entry_1_player_name"] if pd.notna(row["entry_1_player_name"]) else "",
+            "Team 1": row["entry_1_team_name"],
+            "Points 1": row["entry_1_points"],
+            "Player 2": row["entry_2_player_name"] if pd.notna(row["entry_2_player_name"]) else "",
+            "Team 2": row["entry_2_team_name"],
+            "Points 2": row["entry_2_points"],
+            "Winner": row["winner"],
+            "Is Bye": row["is_bye"],
+        })
+    
+    df_display = pd.DataFrame(matches)
+    if df_display.empty:
+        st.warning("Jager Cup matches will begin in GW34.")
+        return
+
     # Sort by stage and week
-    df = df.sort_values(["Week"]).reset_index(drop=True)
+    df_display = df_display.sort_values(["Week"]).reset_index(drop=True)
     # Create a tab for each stage (e.g., "Round of 32", "Quarter Final", etc.)
-    stages = df["Stage"].unique().tolist()
+    stages = df_display["Stage"].unique().tolist()
     tabs = st.tabs(stages)
     for i, stage in enumerate(stages):
         with tabs[i]:
-            df_gw = df[df["Stage"] == stage]
+            df_gw = df_display[df_display["Stage"] == stage]
             # Separate byes from regular matches
             df_matches = df_gw[~df_gw["Is Bye"]]
             df_byes = df_gw[df_gw["Is Bye"]]
