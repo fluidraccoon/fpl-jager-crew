@@ -10,7 +10,9 @@ def get_finished_gameweeks():
             gw_info = pd.read_csv("data/gameweek_info.csv")
             if not gw_info.empty and "finished_events" in gw_info.columns:
                 finished_str = gw_info["finished_events"].iloc[0]
-                if pd.notna(finished_str) and finished_str.strip():
+                # Convert to string to handle numpy types and NaN values
+                finished_str = str(finished_str) if pd.notna(finished_str) else ""
+                if finished_str.strip() and finished_str.strip() != "nan":
                     return [int(x) for x in finished_str.split(",")]
                 else:
                     # Empty string means no finished gameweeks yet - this is valid
@@ -40,7 +42,10 @@ def show_weekly_winner_page(df_weekly_scores, selected_user):
         return
     else:
         # Some gameweeks are finished
-        st.info(f"Showing winners for completed gameweeks: {', '.join(map(str, sorted(finished_gameweeks)))}")
+        if len(finished_gameweeks) == 1:
+            st.info(f"Showing winners for completed gameweek: {finished_gameweeks[0]}")
+        else:
+            st.info(f"Showing winners for completed gameweeks: 1-{max(finished_gameweeks)}")
         df_completed = df_weekly_scores[df_weekly_scores["event"].isin(finished_gameweeks)]
         if df_completed.empty:
             st.info("No data available for completed gameweeks.")
