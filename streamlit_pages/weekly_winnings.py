@@ -70,7 +70,7 @@ def show_weekly_winner_page(df_weekly_scores, selected_user):
         else:
             return [""] * len(row)
 
-    tab1, tab2 = st.tabs(["📅 Weekly Winner", "🎖️ Total Weekly Prizes"])
+    tab1, tab2, tab3 = st.tabs(["📅 Weekly Winner", "🎖️ Total Weekly Prizes", "🌟 Top 5 Finishes"])
     with tab1:
         config_columns = {
             "event": st.column_config.NumberColumn("Gameweek"),
@@ -106,3 +106,74 @@ def show_weekly_winner_page(df_weekly_scores, selected_user):
             column_config=config_columns,
             use_container_width=False,
         )
+
+    with tab3:
+        st.subheader(f"🌟 {selected_user}'s Top 5 Finishes")
+        
+        # Find gameweeks where selected user finished in top 5
+        my_top_weeks = []
+        
+        for event in df_completed["event"].unique():
+            event_data = df_completed[df_completed["event"] == event].copy()
+            event_data = event_data.sort_values("points", ascending=False)
+            
+            # Get the 5th highest score to determine cutoff (including ties)
+            if len(event_data) >= 5:
+                fifth_highest_score = event_data.iloc[4]["points"]
+                top_5_data = event_data[event_data["points"] >= fifth_highest_score]
+            else:
+                # If less than 5 players, take all
+                top_5_data = event_data
+            
+            # Check if selected user is in this top group
+            user_in_top = top_5_data[top_5_data["player_name"] == selected_user]
+            if not user_in_top.empty:
+                # Add rank information
+                top_5_data = top_5_data.reset_index(drop=True)
+                top_5_data["rank"] = range(1, len(top_5_data) + 1)
+                
+                # Store this gameweek data
+                my_top_weeks.append({
+                    "event": event,
+                    "my_rank": user_in_top.index[0] + 1,
+                    "my_points": user_in_top.iloc[0]["points"],
+                    "top_5_data": top_5_data
+                })
+        
+        if my_top_weeks:
+            # Sort by gameweek
+            my_top_weeks.sort(key=lambda x: x["event"])
+            
+            top5_count = 0
+            for week_data in my_top_weeks:
+                top5_count += 1
+                event = week_data["event"]
+                my_rank = week_data["my_rank"]
+                my_points = week_data["my_points"]
+                top_5_data = week_data["top_5_data"]
+                
+                with st.expander(f"📈 Gameweek {event} - Finished #{my_rank} with {my_points} points", expanded=(top5_count==1)):
+                    # Highlight function for this specific gameweek
+                    def highlight_my_row(row):
+                        if row["player_name"] == selected_user:
+                            return ["background-color: #cce5ff"] * len(row)  # light blue
+                        else:
+                            return [""] * len(row)
+                    
+                    config_columns = {
+                        "rank": st.column_config.NumberColumn("#", width=40),
+                        "player_name": st.column_config.TextColumn("Manager", width=150),
+                        "points": st.column_config.NumberColumn("Points", width=80),
+                    }
+                    
+                    display_data = top_5_data[["rank", "player_name", "points"]]
+                    
+                    st.dataframe(
+                        display_data.style.apply(highlight_my_row, axis=1),
+                        hide_index=True,
+                        column_config=config_columns,
+                        use_container_width=False,
+                        height=(len(display_data) + 1) * 35 + 3
+                    )
+        else:
+            st.info(f"No top 5 finishes found for {selected_user} in completed gameweeks.")
