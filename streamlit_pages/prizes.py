@@ -51,8 +51,6 @@ def show_prizes_page():
         def cup_label(pos):
             if int(pos) == 1:
                 return "Winner"
-            elif int(pos) == 2:
-                return "Runner-up"
             else:
                 return ordinal(pos)
 
