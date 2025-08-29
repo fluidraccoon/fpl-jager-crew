@@ -115,7 +115,10 @@ def show_weekly_winner_page(df_weekly_scores, selected_user):
         
         for event in df_completed["event"].unique():
             event_data = df_completed[df_completed["event"] == event].copy()
-            event_data = event_data.sort_values("points", ascending=False)
+            event_data = event_data.sort_values("points", ascending=False).reset_index(drop=True)
+            
+            # Add proper rank column (handles ties correctly)
+            event_data["rank"] = event_data["points"].rank(method="min", ascending=False).astype(int)
             
             # Get the 5th highest score to determine cutoff (including ties)
             if len(event_data) >= 5:
@@ -128,14 +131,10 @@ def show_weekly_winner_page(df_weekly_scores, selected_user):
             # Check if selected user is in this top group
             user_in_top = top_5_data[top_5_data["player_name"] == selected_user]
             if not user_in_top.empty:
-                # Add rank information
-                top_5_data = top_5_data.reset_index(drop=True)
-                top_5_data["rank"] = range(1, len(top_5_data) + 1)
-                
                 # Store this gameweek data
                 my_top_weeks.append({
                     "event": event,
-                    "my_rank": user_in_top.index[0] + 1,
+                    "my_rank": user_in_top.iloc[0]["rank"],
                     "my_points": user_in_top.iloc[0]["points"],
                     "top_5_data": top_5_data
                 })
@@ -176,4 +175,4 @@ def show_weekly_winner_page(df_weekly_scores, selected_user):
                         height=(len(display_data) + 1) * 35 + 3
                     )
         else:
-            st.info(f"No top 5 finishes found for {selected_user} in completed gameweeks.")
+            st.info(f"No top 5 finishes found for {selected_user}.")
