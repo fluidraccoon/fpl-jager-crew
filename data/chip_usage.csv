@@ -2,8 +2,10 @@ entry_id,player_name,team_name,event,chip
 95435,Dan Coulton,Coult-on the Break,6,wildcard
 95435,Dan Coulton,Coult-on the Break,9,bboost
 95435,Dan Coulton,Coult-on the Break,13,freehit
+95435,Dan Coulton,Coult-on the Break,17,3xc
 2603978,Cedric Mendes,Falcons,3,wildcard
 2603978,Cedric Mendes,Falcons,10,bboost
+2603978,Cedric Mendes,Falcons,17,3xc
 4514606,Amit Shah,Peaky Reijnders,6,wildcard
 4514606,Amit Shah,Peaky Reijnders,7,bboost
 1001603,Ravi Kotecha,Noni-your Business!,1,bboost
@@ -15,6 +17,7 @@ entry_id,player_name,team_name,event,chip
 39860,Mitesh Shah,Wirtz Nightmare,13,freehit
 2286181,Simon Brawn,Hoping for £10,6,3xc
 2286181,Simon Brawn,Hoping for £10,11,bboost
+2286181,Simon Brawn,Hoping for £10,17,freehit
 5035992,Deepak Singh,EKiTikka MoSalah,3,wildcard
 5035992,Deepak Singh,EKiTikka MoSalah,13,3xc
 1212669,Yatin Patel,DaGreat1s,6,wildcard
@@ -30,8 +33,10 @@ entry_id,player_name,team_name,event,chip
 237392,Samit R Patel,I'm a Baleba,6,wildcard
 237392,Samit R Patel,I'm a Baleba,13,3xc
 237392,Samit R Patel,I'm a Baleba,16,freehit
+237392,Samit R Patel,I'm a Baleba,17,bboost
 234378,Rahul Mahida,The Usual Suspects,15,3xc
 234378,Rahul Mahida,The Usual Suspects,16,wildcard
+234378,Rahul Mahida,The Usual Suspects,17,bboost
 5712833,Jameel Shah,AFC Jazzle,6,wildcard
 5712833,Jameel Shah,AFC Jazzle,9,bboost
 5712833,Jameel Shah,AFC Jazzle,13,3xc
@@ -43,9 +48,11 @@ entry_id,player_name,team_name,event,chip
 1022916,Jaymesh Patel,Bruno Dos Tres,3,wildcard
 1022916,Jaymesh Patel,Bruno Dos Tres,13,3xc
 4267263,Tom Sharp,sharp shooters,6,3xc
+4267263,Tom Sharp,sharp shooters,17,freehit
 7126282,Mihir Patel,M-Unit,12,wildcard
 1108722,Prish Roy,Jota#20,4,wildcard
 1108722,Prish Roy,Jota#20,13,freehit
+1108722,Prish Roy,Jota#20,17,3xc
 42133,Akshay Loomba,Ekitike Taka,4,wildcard
 42133,Akshay Loomba,Ekitike Taka,6,3xc
 42133,Akshay Loomba,Ekitike Taka,11,bboost
