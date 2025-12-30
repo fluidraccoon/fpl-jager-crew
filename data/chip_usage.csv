@@ -10,6 +10,7 @@ entry_id,player_name,team_name,event,chip
 2603978,Cedric Mendes,Falcons,3,wildcard
 2603978,Cedric Mendes,Falcons,10,bboost
 2603978,Cedric Mendes,Falcons,17,3xc
+2603978,Cedric Mendes,Falcons,19,freehit
 1001603,Ravi Kotecha,Noni-your Business!,1,bboost
 1001603,Ravi Kotecha,Noni-your Business!,6,3xc
 1001603,Ravi Kotecha,Noni-your Business!,7,wildcard
@@ -17,6 +18,7 @@ entry_id,player_name,team_name,event,chip
 49933,Josh Thomson,Kinder Mbeumo,8,wildcard
 49933,Josh Thomson,Kinder Mbeumo,16,3xc
 49933,Josh Thomson,Kinder Mbeumo,18,bboost
+49933,Josh Thomson,Kinder Mbeumo,19,freehit
 2286181,Simon Brawn,Hoping for £10,6,3xc
 2286181,Simon Brawn,Hoping for £10,11,bboost
 2286181,Simon Brawn,Hoping for £10,17,freehit
@@ -24,8 +26,10 @@ entry_id,player_name,team_name,event,chip
 5035992,Deepak Singh,EKiTikka MoSalah,3,wildcard
 5035992,Deepak Singh,EKiTikka MoSalah,13,3xc
 5035992,Deepak Singh,EKiTikka MoSalah,18,freehit
+5035992,Deepak Singh,EKiTikka MoSalah,19,bboost
 4514606,Amit Shah,Peaky Reijnders,6,wildcard
 4514606,Amit Shah,Peaky Reijnders,7,bboost
+4514606,Amit Shah,Peaky Reijnders,19,3xc
 1206351,Fabian Carvalho,KayFabe,3,3xc
 1206351,Fabian Carvalho,KayFabe,4,freehit
 1206351,Fabian Carvalho,KayFabe,5,wildcard
@@ -41,20 +45,26 @@ entry_id,player_name,team_name,event,chip
 5712833,Jameel Shah,AFC Jazzle,6,wildcard
 5712833,Jameel Shah,AFC Jazzle,9,bboost
 5712833,Jameel Shah,AFC Jazzle,13,3xc
+5712833,Jameel Shah,AFC Jazzle,19,freehit
 234378,Rahul Mahida,The Usual Suspects,15,3xc
 234378,Rahul Mahida,The Usual Suspects,16,wildcard
 234378,Rahul Mahida,The Usual Suspects,17,bboost
+234378,Rahul Mahida,The Usual Suspects,19,freehit
 4267263,Tom Sharp,sharp shooters,6,3xc
 4267263,Tom Sharp,sharp shooters,17,freehit
 4267263,Tom Sharp,sharp shooters,18,wildcard
+4267263,Tom Sharp,sharp shooters,19,bboost
 1022916,Jaymesh Patel,Bruno Dos Tres,3,wildcard
 1022916,Jaymesh Patel,Bruno Dos Tres,13,3xc
 1022916,Jaymesh Patel,Bruno Dos Tres,18,bboost
+1022916,Jaymesh Patel,Bruno Dos Tres,19,freehit
 7126282,Mihir Patel,M-Unit,12,wildcard
 7126282,Mihir Patel,M-Unit,18,3xc
+7126282,Mihir Patel,M-Unit,19,bboost
 2026984,Bharesh Patel,Boz Mania,11,bboost
 2026984,Bharesh Patel,Boz Mania,13,3xc
 2026984,Bharesh Patel,Boz Mania,18,freehit
+2026984,Bharesh Patel,Boz Mania,19,wildcard
 1108722,Prish Roy,Jota#20,4,wildcard
 1108722,Prish Roy,Jota#20,13,freehit
 1108722,Prish Roy,Jota#20,17,3xc
@@ -66,3 +76,4 @@ entry_id,player_name,team_name,event,chip
 41782,Shivaan Popat,Diogone,5,wildcard
 41782,Shivaan Popat,Diogone,6,3xc
 41782,Shivaan Popat,Diogone,8,bboost
+41782,Shivaan Popat,Diogone,19,freehit
