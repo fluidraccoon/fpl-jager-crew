@@ -31,6 +31,10 @@ entry_id,player_name,team_name,event,chip
 1212669,Yatin Patel,DaGreat1s,7,bboost
 1212669,Yatin Patel,DaGreat1s,13,3xc
 1212669,Yatin Patel,DaGreat1s,15,freehit
+237392,Samit R Patel,I'm a Baleba,6,wildcard
+237392,Samit R Patel,I'm a Baleba,13,3xc
+237392,Samit R Patel,I'm a Baleba,16,freehit
+237392,Samit R Patel,I'm a Baleba,17,bboost
 234378,Rahul Mahida,The Usual Suspects,15,3xc
 234378,Rahul Mahida,The Usual Suspects,16,wildcard
 234378,Rahul Mahida,The Usual Suspects,17,bboost
@@ -38,10 +42,6 @@ entry_id,player_name,team_name,event,chip
 4514606,Amit Shah,Peaky Reijnders,6,wildcard
 4514606,Amit Shah,Peaky Reijnders,7,bboost
 4514606,Amit Shah,Peaky Reijnders,19,3xc
-237392,Samit R Patel,I'm a Baleba,6,wildcard
-237392,Samit R Patel,I'm a Baleba,13,3xc
-237392,Samit R Patel,I'm a Baleba,16,freehit
-237392,Samit R Patel,I'm a Baleba,17,bboost
 1206351,Fabian Carvalho,KayFabe,3,3xc
 1206351,Fabian Carvalho,KayFabe,4,freehit
 1206351,Fabian Carvalho,KayFabe,5,wildcard
@@ -71,12 +71,12 @@ entry_id,player_name,team_name,event,chip
 41782,Shivaan Popat,Diogone,6,3xc
 41782,Shivaan Popat,Diogone,8,bboost
 41782,Shivaan Popat,Diogone,19,freehit
-42133,Akshay Loomba,Ekitike Taka,4,wildcard
-42133,Akshay Loomba,Ekitike Taka,6,3xc
-42133,Akshay Loomba,Ekitike Taka,11,bboost
-42133,Akshay Loomba,Ekitike Taka,14,freehit
 1108722,Prish Roy,Jota#20,4,wildcard
 1108722,Prish Roy,Jota#20,13,freehit
 1108722,Prish Roy,Jota#20,17,3xc
 1108722,Prish Roy,Jota#20,18,bboost
 1108722,Prish Roy,Jota#20,20,wildcard
+42133,Akshay Loomba,Ekitike Taka,4,wildcard
+42133,Akshay Loomba,Ekitike Taka,6,3xc
+42133,Akshay Loomba,Ekitike Taka,11,bboost
+42133,Akshay Loomba,Ekitike Taka,14,freehit
