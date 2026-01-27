@@ -1,20 +1,20 @@
 entry_id,player_name,team_name,event,chip
-39860,Mitesh Shah,Wirtz Nightmare,4,wildcard
-39860,Mitesh Shah,Wirtz Nightmare,6,3xc
-39860,Mitesh Shah,Wirtz Nightmare,13,freehit
-39860,Mitesh Shah,Wirtz Nightmare,18,bboost
 95435,Dan Coulton,Coult-on the Break,6,wildcard
 95435,Dan Coulton,Coult-on the Break,9,bboost
 95435,Dan Coulton,Coult-on the Break,13,freehit
 95435,Dan Coulton,Coult-on the Break,17,3xc
-1001603,Ravi Kotecha,Noni-your Business!,1,bboost
-1001603,Ravi Kotecha,Noni-your Business!,6,3xc
-1001603,Ravi Kotecha,Noni-your Business!,7,wildcard
-1001603,Ravi Kotecha,Noni-your Business!,12,freehit
+39860,Mitesh Shah,Wirtz Nightmare,4,wildcard
+39860,Mitesh Shah,Wirtz Nightmare,6,3xc
+39860,Mitesh Shah,Wirtz Nightmare,13,freehit
+39860,Mitesh Shah,Wirtz Nightmare,18,bboost
 2603978,Cedric Mendes,Falcons,3,wildcard
 2603978,Cedric Mendes,Falcons,10,bboost
 2603978,Cedric Mendes,Falcons,17,3xc
 2603978,Cedric Mendes,Falcons,19,freehit
+1001603,Ravi Kotecha,Noni-your Business!,1,bboost
+1001603,Ravi Kotecha,Noni-your Business!,6,3xc
+1001603,Ravi Kotecha,Noni-your Business!,7,wildcard
+1001603,Ravi Kotecha,Noni-your Business!,12,freehit
 2286181,Simon Brawn,Hoping for £10,6,3xc
 2286181,Simon Brawn,Hoping for £10,11,bboost
 2286181,Simon Brawn,Hoping for £10,17,freehit
@@ -48,14 +48,14 @@ entry_id,player_name,team_name,event,chip
 1206351,Fabian Carvalho,KayFabe,5,wildcard
 1206351,Fabian Carvalho,KayFabe,8,bboost
 1206351,Fabian Carvalho,KayFabe,21,wildcard
-2026984,Bharesh Patel,Boz Mania,11,bboost
-2026984,Bharesh Patel,Boz Mania,13,3xc
-2026984,Bharesh Patel,Boz Mania,18,freehit
-2026984,Bharesh Patel,Boz Mania,19,wildcard
 1212669,Yatin Patel,DaGreat1s,6,wildcard
 1212669,Yatin Patel,DaGreat1s,7,bboost
 1212669,Yatin Patel,DaGreat1s,13,3xc
 1212669,Yatin Patel,DaGreat1s,15,freehit
+2026984,Bharesh Patel,Boz Mania,11,bboost
+2026984,Bharesh Patel,Boz Mania,13,3xc
+2026984,Bharesh Patel,Boz Mania,18,freehit
+2026984,Bharesh Patel,Boz Mania,19,wildcard
 1022916,Jaymesh Patel,Bruno Dos Tres,3,wildcard
 1022916,Jaymesh Patel,Bruno Dos Tres,13,3xc
 1022916,Jaymesh Patel,Bruno Dos Tres,18,bboost
