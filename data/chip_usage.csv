@@ -3,10 +3,12 @@ entry_id,player_name,team_name,event,chip
 95435,Dan Coulton,Coult-on the Break,9,bboost
 95435,Dan Coulton,Coult-on the Break,13,freehit
 95435,Dan Coulton,Coult-on the Break,17,3xc
+95435,Dan Coulton,Coult-on the Break,26,3xc
 39860,Mitesh Shah,Wirtz Nightmare,4,wildcard
 39860,Mitesh Shah,Wirtz Nightmare,6,3xc
 39860,Mitesh Shah,Wirtz Nightmare,13,freehit
 39860,Mitesh Shah,Wirtz Nightmare,18,bboost
+39860,Mitesh Shah,Wirtz Nightmare,26,3xc
 2603978,Cedric Mendes,Falcons,3,wildcard
 2603978,Cedric Mendes,Falcons,10,bboost
 2603978,Cedric Mendes,Falcons,17,3xc
@@ -37,6 +39,7 @@ entry_id,player_name,team_name,event,chip
 237392,Samit R Patel,I'm a Baleba,16,freehit
 237392,Samit R Patel,I'm a Baleba,17,bboost
 237392,Samit R Patel,I'm a Baleba,22,wildcard
+237392,Samit R Patel,I'm a Baleba,26,3xc
 4514606,Amit Shah,Peaky Reijnders,6,wildcard
 4514606,Amit Shah,Peaky Reijnders,7,bboost
 4514606,Amit Shah,Peaky Reijnders,19,3xc
@@ -49,6 +52,7 @@ entry_id,player_name,team_name,event,chip
 1206351,Fabian Carvalho,KayFabe,5,wildcard
 1206351,Fabian Carvalho,KayFabe,8,bboost
 1206351,Fabian Carvalho,KayFabe,21,wildcard
+1206351,Fabian Carvalho,KayFabe,26,3xc
 5712833,Jameel Shah,AFC Jazzle,6,wildcard
 5712833,Jameel Shah,AFC Jazzle,9,bboost
 5712833,Jameel Shah,AFC Jazzle,13,3xc
@@ -58,6 +62,7 @@ entry_id,player_name,team_name,event,chip
 1212669,Yatin Patel,DaGreat1s,7,bboost
 1212669,Yatin Patel,DaGreat1s,13,3xc
 1212669,Yatin Patel,DaGreat1s,15,freehit
+1212669,Yatin Patel,DaGreat1s,26,3xc
 2026984,Bharesh Patel,Boz Mania,11,bboost
 2026984,Bharesh Patel,Boz Mania,13,3xc
 2026984,Bharesh Patel,Boz Mania,18,freehit
@@ -79,6 +84,7 @@ entry_id,player_name,team_name,event,chip
 42133,Akshay Loomba,Ekitike Taka,6,3xc
 42133,Akshay Loomba,Ekitike Taka,11,bboost
 42133,Akshay Loomba,Ekitike Taka,14,freehit
+42133,Akshay Loomba,Ekitike Taka,26,3xc
 41782,Shivaan Popat,Diogone,5,wildcard
 41782,Shivaan Popat,Diogone,6,3xc
 41782,Shivaan Popat,Diogone,8,bboost
