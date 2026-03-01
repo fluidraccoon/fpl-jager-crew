@@ -3,6 +3,7 @@ import pandas as pd
 import os
 
 
+@st.cache_data(ttl=60)
 def get_finished_gameweeks():
     """Get list of finished gameweeks from the gameweek info CSV."""
     try:

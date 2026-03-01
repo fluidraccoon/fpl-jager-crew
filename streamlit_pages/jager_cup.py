@@ -3,17 +3,25 @@ import pandas as pd
 import os
 
 
+@st.cache_data(ttl=60)
+def load_jager_cup_data():
+    """Load Jager Cup matches data with caching"""
+    csv_path = "data/jager_cup_matches.csv"
+    if os.path.exists(csv_path):
+        try:
+            return pd.read_csv(csv_path)
+        except Exception as e:
+            return None
+    return None
+
+
 def run_cup_page():
     st.title("Jager Cup 🏆")
 
     # Try to load data from CSV file
-    csv_path = "data/jager_cup_matches.csv"
-    if os.path.exists(csv_path):
-        try:
-            df = pd.read_csv(csv_path)
-            display_cup_matches_by_week(df)
-        except Exception as e:
-            st.error(f"Error loading Jager Cup data: {e}")
+    df = load_jager_cup_data()
+    if df is not None:
+        display_cup_matches_by_week(df)
     else:
         st.warning("Jager Cup matches will begin in GW34.")
 

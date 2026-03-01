@@ -11,10 +11,16 @@ def ordinal(n):
     return f"{n}{suffix}"
 
 
+@st.cache_data(ttl=60)
+def load_prize_fund():
+    """Load prize fund data with caching"""
+    return pd.read_csv("prize_fund.csv")
+
+
 def show_prizes_page():
     """Display the prizes page content side by side"""
     st.title("Prize Fund 💵")
-    df = pd.read_csv("prize_fund.csv")
+    df = load_prize_fund()
     col1, col2, col3 = st.columns(3)
 
     # Main League Prizes

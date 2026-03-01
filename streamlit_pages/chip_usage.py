@@ -6,7 +6,7 @@ import altair as alt
 def load_chip_usage():
     """Load chip usage data with caching"""
 
-    @st.cache_data
+    @st.cache_data(ttl=60)
     def load_data():
         try:
             return pd.read_csv("data/chip_usage.csv")
@@ -20,7 +20,7 @@ def load_chip_usage():
 def load_weekly_scores():
     """Load weekly scores data with caching"""
 
-    @st.cache_data
+    @st.cache_data(ttl=60)
     def load_data():
         try:
             return pd.read_csv("data/weekly_scores.csv")
