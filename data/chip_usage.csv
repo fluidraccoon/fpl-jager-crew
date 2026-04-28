@@ -27,6 +27,13 @@ entry_id,player_name,team_name,event,chip
 1001603,Ravi Kotecha,Noni-your Business!,32,wildcard
 1001603,Ravi Kotecha,Noni-your Business!,33,bboost
 1001603,Ravi Kotecha,Noni-your Business!,34,freehit
+2286181,Simon Brawn,Hoping for £10,6,3xc
+2286181,Simon Brawn,Hoping for £10,11,bboost
+2286181,Simon Brawn,Hoping for £10,17,freehit
+2286181,Simon Brawn,Hoping for £10,18,wildcard
+2286181,Simon Brawn,Hoping for £10,32,wildcard
+2286181,Simon Brawn,Hoping for £10,33,bboost
+2286181,Simon Brawn,Hoping for £10,34,freehit
 1206351,Fabian Carvalho,KayFabe,3,3xc
 1206351,Fabian Carvalho,KayFabe,4,freehit
 1206351,Fabian Carvalho,KayFabe,5,wildcard
@@ -35,13 +42,6 @@ entry_id,player_name,team_name,event,chip
 1206351,Fabian Carvalho,KayFabe,26,3xc
 1206351,Fabian Carvalho,KayFabe,33,bboost
 1206351,Fabian Carvalho,KayFabe,34,freehit
-2286181,Simon Brawn,Hoping for £10,6,3xc
-2286181,Simon Brawn,Hoping for £10,11,bboost
-2286181,Simon Brawn,Hoping for £10,17,freehit
-2286181,Simon Brawn,Hoping for £10,18,wildcard
-2286181,Simon Brawn,Hoping for £10,32,wildcard
-2286181,Simon Brawn,Hoping for £10,33,bboost
-2286181,Simon Brawn,Hoping for £10,34,freehit
 5035992,Deepak Singh,EKiTikka MoSalah,3,wildcard
 5035992,Deepak Singh,EKiTikka MoSalah,13,3xc
 5035992,Deepak Singh,EKiTikka MoSalah,18,freehit
@@ -75,18 +75,24 @@ entry_id,player_name,team_name,event,chip
 4514606,Amit Shah,Peaky Reijnders,19,3xc
 4514606,Amit Shah,Peaky Reijnders,32,wildcard
 4514606,Amit Shah,Peaky Reijnders,34,freehit
-5712833,Jameel Shah,AFC Jazzle,6,wildcard
-5712833,Jameel Shah,AFC Jazzle,9,bboost
-5712833,Jameel Shah,AFC Jazzle,13,3xc
-5712833,Jameel Shah,AFC Jazzle,19,freehit
-5712833,Jameel Shah,AFC Jazzle,21,wildcard
-5712833,Jameel Shah,AFC Jazzle,34,freehit
 234378,Rahul Mahida,The Usual Suspects,15,3xc
 234378,Rahul Mahida,The Usual Suspects,16,wildcard
 234378,Rahul Mahida,The Usual Suspects,17,bboost
 234378,Rahul Mahida,The Usual Suspects,19,freehit
 234378,Rahul Mahida,The Usual Suspects,33,3xc
 234378,Rahul Mahida,The Usual Suspects,34,freehit
+5712833,Jameel Shah,AFC Jazzle,6,wildcard
+5712833,Jameel Shah,AFC Jazzle,9,bboost
+5712833,Jameel Shah,AFC Jazzle,13,3xc
+5712833,Jameel Shah,AFC Jazzle,19,freehit
+5712833,Jameel Shah,AFC Jazzle,21,wildcard
+5712833,Jameel Shah,AFC Jazzle,34,freehit
+4267263,Tom Sharp,sharp shooters,6,3xc
+4267263,Tom Sharp,sharp shooters,17,freehit
+4267263,Tom Sharp,sharp shooters,18,wildcard
+4267263,Tom Sharp,sharp shooters,19,bboost
+4267263,Tom Sharp,sharp shooters,30,bboost
+4267263,Tom Sharp,sharp shooters,34,freehit
 41782,Shivaan Popat,Diogone,5,wildcard
 41782,Shivaan Popat,Diogone,6,3xc
 41782,Shivaan Popat,Diogone,8,bboost
@@ -94,12 +100,6 @@ entry_id,player_name,team_name,event,chip
 41782,Shivaan Popat,Diogone,32,wildcard
 41782,Shivaan Popat,Diogone,33,bboost
 41782,Shivaan Popat,Diogone,34,freehit
-4267263,Tom Sharp,sharp shooters,6,3xc
-4267263,Tom Sharp,sharp shooters,17,freehit
-4267263,Tom Sharp,sharp shooters,18,wildcard
-4267263,Tom Sharp,sharp shooters,19,bboost
-4267263,Tom Sharp,sharp shooters,30,bboost
-4267263,Tom Sharp,sharp shooters,34,freehit
 237392,Samit R Patel,I'm a Baleba,6,wildcard
 237392,Samit R Patel,I'm a Baleba,13,3xc
 237392,Samit R Patel,I'm a Baleba,16,freehit
