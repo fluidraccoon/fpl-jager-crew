@@ -37,7 +37,7 @@ def initialize_session_state():
 
 def render_sidebar(df_weekly_scores):
     """Render sidebar with persistent dropdown"""
-    st.sidebar.title("The Jager Crew ⚽ 2024/25")
+    st.sidebar.title("The Jager Crew ⚽ 2025/26")
     user_options = sorted(set(df_weekly_scores["player_name"]))
     selected_user = st.sidebar.selectbox(
         label="Select your name",
