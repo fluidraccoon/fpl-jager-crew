@@ -1,6 +1,6 @@
 event,stage,entry_1_id,entry_1_player_name,entry_1_team_name,entry_1_points,entry_2_id,entry_2_player_name,entry_2_team_name,entry_2_points,winner,is_bye
 37,Semi-final,39860,Mitesh Shah,Wirtz Nightmare,0,49933.0,Josh Thomson,Kinder Mbeumo,0,,False
-37,Semi-final,1206351,Fabian Carvalho,KayFabe,0,95435.0,Dan Coulton,Coult-on the Break,0,,False
+37,Semi-final,1206351,Fabian Carvalho,KayFabe,21,95435.0,Dan Coulton,Coult-on the Break,0,,False
 36,Quarter-final,49933,Josh Thomson,Kinder Mbeumo,92,41782.0,Shivaan Popat,Diogone,73,49933.0,False
 36,Quarter-final,5035992,Deepak Singh,EKiTikka MoSalah,77,39860.0,Mitesh Shah,Wirtz Nightmare,82,39860.0,False
 36,Quarter-final,234378,Rahul Mahida,The Usual Suspects,72,95435.0,Dan Coulton,Coult-on the Break,81,95435.0,False
