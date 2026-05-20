@@ -1,31 +1,31 @@
 event,stage,entry_1_id,entry_1_player_name,entry_1_team_name,entry_1_points,entry_2_id,entry_2_player_name,entry_2_team_name,entry_2_points,winner,is_bye
-37,Semi-final,39860,Mitesh Shah,Wirtz Nightmare,49,49933.0,Josh Thomson,Kinder Mbeumo,48,,False
-37,Semi-final,1206351,Fabian Carvalho,KayFabe,66,95435.0,Dan Coulton,Coult-on the Break,60,,False
-36,Quarter-final,49933,Josh Thomson,Kinder Mbeumo,92,41782.0,Shivaan Popat,Diogone,73,49933.0,False
-36,Quarter-final,5035992,Deepak Singh,EKiTikka MoSalah,77,39860.0,Mitesh Shah,Wirtz Nightmare,82,39860.0,False
-36,Quarter-final,234378,Rahul Mahida,The Usual Suspects,72,95435.0,Dan Coulton,Coult-on the Break,81,95435.0,False
-36,Quarter-final,1212669,Yatin Patel,DaGreat1s,72,1206351.0,Fabian Carvalho,KayFabe,80,1206351.0,False
-35,Round of 16,1001603,Ravi Kotecha,Noni-your Business!,58,5035992.0,Deepak Singh,EKiTikka MoSalah,65,5035992.0,False
-35,Round of 16,1206351,Fabian Carvalho,KayFabe,77,237392.0,Samit R Patel,I'm a Baleba,36,1206351.0,False
-35,Round of 16,4514606,Amit Shah,Peaky Reijnders,52,1212669.0,Yatin Patel,DaGreat1s,53,1212669.0,False
-35,Round of 16,95435,Dan Coulton,Coult-on the Break,61,4267263.0,Tom Sharp,sharp shooters,45,95435.0,False
-35,Round of 16,41782,Shivaan Popat,Diogone,67,2286181.0,Simon Brawn,Hoping for £10,46,41782.0,False
-35,Round of 16,5712833,Jameel Shah,AFC Jazzle,50,39860.0,Mitesh Shah,Wirtz Nightmare,64,39860.0,False
-35,Round of 16,1022916,Jaymesh Patel,Bruno Dos Tres,51,234378.0,Rahul Mahida,The Usual Suspects,54,234378.0,False
-35,Round of 16,42133,Akshay Loomba,Ekitike Taka,49,49933.0,Josh Thomson,Kinder Mbeumo,59,49933.0,False
-34,Round of 32,39860,Mitesh Shah,Wirtz Nightmare,57,,Bye,BYE,0,39860.0,True
-34,Round of 32,1212669,Yatin Patel,DaGreat1s,62,,Bye,BYE,0,1212669.0,True
-34,Round of 32,2286181,Simon Brawn,Hoping for £10,78,,Bye,BYE,0,2286181.0,True
-34,Round of 32,1001603,Ravi Kotecha,Noni-your Business!,44,,Bye,BYE,0,1001603.0,True
-34,Round of 32,42133,Akshay Loomba,Ekitike Taka,72,,Bye,BYE,0,42133.0,True
-34,Round of 32,5035992,Deepak Singh,EKiTikka MoSalah,56,,Bye,BYE,0,5035992.0,True
-34,Round of 32,49933,Josh Thomson,Kinder Mbeumo,41,,Bye,BYE,0,49933.0,True
-34,Round of 32,234378,Rahul Mahida,The Usual Suspects,52,,Bye,BYE,0,234378.0,True
-34,Round of 32,41782,Shivaan Popat,Diogone,71,,Bye,BYE,0,41782.0,True
-34,Round of 32,1206351,Fabian Carvalho,KayFabe,70,,Bye,BYE,0,1206351.0,True
-34,Round of 32,1022916,Jaymesh Patel,Bruno Dos Tres,52,,Bye,BYE,0,1022916.0,True
-34,Round of 32,4267263,Tom Sharp,sharp shooters,53,7209255.0,Amit Kerai,Net spend FC,37,4267263.0,False
-34,Round of 32,4514606,Amit Shah,Peaky Reijnders,51,2603978.0,Cedric Mendes,Falcons,26,4514606.0,False
-34,Round of 32,2026984,Bharesh Patel,Boz Mania,36,95435.0,Dan Coulton,Coult-on the Break,48,95435.0,False
-34,Round of 32,237392,Samit R Patel,I'm a Baleba,58,1108722.0,Prish Roy,Jota#20,55,237392.0,False
-34,Round of 32,5712833,Jameel Shah,AFC Jazzle,51,7126282.0,Mihir Patel,M-Unit,9,5712833.0,False
+37,Semi-final,39860,Mitesh Shah,Wirtz Nightmare,68,49933.0,Josh Thomson,Kinder Mbeumo,64,39860,False
+37,Semi-final,1206351,Fabian Carvalho,KayFabe,82,95435.0,Dan Coulton,Coult-on the Break,71,1206351,False
+36,Quarter-final,49933,Josh Thomson,Kinder Mbeumo,92,41782.0,Shivaan Popat,Diogone,73,49933,False
+36,Quarter-final,5035992,Deepak Singh,EKiTikka MoSalah,77,39860.0,Mitesh Shah,Wirtz Nightmare,82,39860,False
+36,Quarter-final,234378,Rahul Mahida,The Usual Suspects,72,95435.0,Dan Coulton,Coult-on the Break,81,95435,False
+36,Quarter-final,1212669,Yatin Patel,DaGreat1s,72,1206351.0,Fabian Carvalho,KayFabe,80,1206351,False
+35,Round of 16,1001603,Ravi Kotecha,Noni-your Business!,58,5035992.0,Deepak Singh,EKiTikka MoSalah,65,5035992,False
+35,Round of 16,1206351,Fabian Carvalho,KayFabe,77,237392.0,Samit R Patel,I'm a Baleba,36,1206351,False
+35,Round of 16,4514606,Amit Shah,Peaky Reijnders,52,1212669.0,Yatin Patel,DaGreat1s,53,1212669,False
+35,Round of 16,95435,Dan Coulton,Coult-on the Break,61,4267263.0,Tom Sharp,sharp shooters,45,95435,False
+35,Round of 16,41782,Shivaan Popat,Diogone,67,2286181.0,Simon Brawn,Hoping for £10,46,41782,False
+35,Round of 16,5712833,Jameel Shah,AFC Jazzle,50,39860.0,Mitesh Shah,Wirtz Nightmare,64,39860,False
+35,Round of 16,1022916,Jaymesh Patel,Bruno Dos Tres,51,234378.0,Rahul Mahida,The Usual Suspects,54,234378,False
+35,Round of 16,42133,Akshay Loomba,Ekitike Taka,49,49933.0,Josh Thomson,Kinder Mbeumo,59,49933,False
+34,Round of 32,39860,Mitesh Shah,Wirtz Nightmare,57,,Bye,BYE,0,39860,True
+34,Round of 32,1212669,Yatin Patel,DaGreat1s,62,,Bye,BYE,0,1212669,True
+34,Round of 32,2286181,Simon Brawn,Hoping for £10,78,,Bye,BYE,0,2286181,True
+34,Round of 32,1001603,Ravi Kotecha,Noni-your Business!,44,,Bye,BYE,0,1001603,True
+34,Round of 32,42133,Akshay Loomba,Ekitike Taka,72,,Bye,BYE,0,42133,True
+34,Round of 32,5035992,Deepak Singh,EKiTikka MoSalah,56,,Bye,BYE,0,5035992,True
+34,Round of 32,49933,Josh Thomson,Kinder Mbeumo,41,,Bye,BYE,0,49933,True
+34,Round of 32,234378,Rahul Mahida,The Usual Suspects,52,,Bye,BYE,0,234378,True
+34,Round of 32,41782,Shivaan Popat,Diogone,71,,Bye,BYE,0,41782,True
+34,Round of 32,1206351,Fabian Carvalho,KayFabe,70,,Bye,BYE,0,1206351,True
+34,Round of 32,1022916,Jaymesh Patel,Bruno Dos Tres,52,,Bye,BYE,0,1022916,True
+34,Round of 32,4267263,Tom Sharp,sharp shooters,53,7209255.0,Amit Kerai,Net spend FC,37,4267263,False
+34,Round of 32,4514606,Amit Shah,Peaky Reijnders,51,2603978.0,Cedric Mendes,Falcons,26,4514606,False
+34,Round of 32,2026984,Bharesh Patel,Boz Mania,36,95435.0,Dan Coulton,Coult-on the Break,48,95435,False
+34,Round of 32,237392,Samit R Patel,I'm a Baleba,58,1108722.0,Prish Roy,Jota#20,55,237392,False
+34,Round of 32,5712833,Jameel Shah,AFC Jazzle,51,7126282.0,Mihir Patel,M-Unit,9,5712833,False
